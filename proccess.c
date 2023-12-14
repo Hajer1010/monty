@@ -10,7 +10,7 @@
 void process(stack_t **stack, char *line, unsigned int line_number)
 {
 	char *opcode;
-	char *v_str, *n_ptr;
+	char *v_str;
 	int value;
 
 	opcode = strtok(line, " \t\n");
@@ -23,14 +23,10 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 		if (v_str == NULL)
                 {
                         fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			free_stack(stack);
                         exit(EXIT_FAILURE);
                 }
-		value = strtol(v_str, &n_ptr, 10);
-		if (n_ptr != NULL)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
+		value = atoi(v_str);
 		push(stack, value, line_number);
 	}
 	else if (strcmp(opcode, "pop") == 0)
