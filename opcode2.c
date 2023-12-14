@@ -43,6 +43,12 @@ void add(stack_t **stack, unsigned int line_number)
 	free(st);
 }
 
+/**
+ * sub - function to subtract two nodes
+ * @stack: the head
+ * @line_number: hold the value
+*/
+
 void sub(stack_t **stack, unsigned int line_number)
 {
 	int result;
@@ -55,6 +61,29 @@ void sub(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	result = st->next->n + st->n;
+	st->next->n = result;
+	(*stack) = st->next;
+	free(st);
+}
+
+/**
+ * mul - function to multiply two nodes
+ * @stack: the head
+ * @line_number: ho;d the value
+*/
+
+void mul(stack_t **stack, unsigned int line_number)
+{
+	int result;
+	stack_t *st;
+
+	st = *stack;
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	result = (st->next->n) * (st->n);
 	st->next->n = result;
 	(*stack) = st->next;
 	free(st);

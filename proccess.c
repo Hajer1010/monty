@@ -16,7 +16,6 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 	opcode = strtok(line, " \t\n");
 	if (opcode == NULL)
 		return;
-
 	if (strcmp(opcode, "push") == 0)
 	{
 		v_str = strtok(NULL, " \n\t");
@@ -37,6 +36,8 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 		add(stack, line_number);
 	else if (strcmp(opcode, "sub") == 0)
 		sub(stack, line_number);
+	else if (strcmp(opcode, "mul") == 0)
+		mul(stack, line_number);
 	else if (strcmp(opcode, "pint") == 0)
 		pint(stack, line_number);
 	else if (strcmp(opcode, "pall") == 0)
