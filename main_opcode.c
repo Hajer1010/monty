@@ -9,7 +9,7 @@
 void push(stack_t **stack, int value)
 {
 	stack_t *new = malloc(sizeof(stack_t));
-	
+
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
