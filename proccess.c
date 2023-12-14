@@ -35,6 +35,8 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 		swap(stack, line_number);
 	else if (strcmp(opcode, "add") == 0)
 		add(stack, line_number);
+	else if (strcmp(opcode, "sub") == 0)
+		sub(stack, line_number);
 	else if (strcmp(opcode, "pint") == 0)
 		pint(stack, line_number);
 	else if (strcmp(opcode, "pall") == 0)
