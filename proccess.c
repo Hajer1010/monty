@@ -26,7 +26,7 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 			exit(EXIT_FAILURE);
 		}
 		value = atoi(v_str);
-		push(stack, value, line_number);
+		push(stack, value);
 	}
 	else if (strcmp(opcode, "pop") == 0)
 		pop(stack, line_number);

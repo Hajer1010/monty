@@ -7,11 +7,10 @@
  * @line_number: hild the line value
 */
 
-void push(stack_t **stack, int value, unsigned int line_number)
+void push(stack_t **stack, int value)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
-	(void)line_number;
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
