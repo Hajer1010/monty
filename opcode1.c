@@ -31,7 +31,7 @@ void pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	top = *stack;
-	*stack = top->next;
+	*stack = (*stack)->next;
 
 	if (*stack != NULL)
 	{

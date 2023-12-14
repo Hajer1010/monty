@@ -6,10 +6,11 @@
  * @value: hold the value
 */
 
-void push(stack_t **stack, int value)
+void push(stack_t **stack, int value, unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
+	(void)line_number;
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -19,7 +20,7 @@ void push(stack_t **stack, int value)
 	new->prev = NULL;
 	new->next = *stack;
 
-	if ((*stack) != NULL)
+	if (*stack != NULL)
 	{
 		(*stack)->prev = *stack;
 	}
@@ -32,14 +33,11 @@ void push(stack_t **stack, int value)
  * @line_number: hold the value
 */
 
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack)
 {
 	stack_t *ptr;
 
-	(void)line_number;
-
 	ptr = *stack;
-
 	while (ptr != NULL)
 	{
 		printf("%d\n", ptr->n);
