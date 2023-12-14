@@ -22,7 +22,7 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 		v_str = strtok(NULL, " \t\n");
 		if (v_str == NULL)
 		{
-			fprintf(stderr, "L%d: usage: push integer", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 		value = atoi(v_str);
