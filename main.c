@@ -1,16 +1,19 @@
 #include "monty.h"
+
 /**
  * main - entry point
  * @argc: argument counter
  * @argv: command line argument
  * Return: 0 (success)
  */
+
 int main(int argc, char *argv[])
 {
 	char line[100];
 	FILE *f;
 	char *op, *v_str;
 	int value;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{	fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
@@ -19,7 +22,7 @@ int main(int argc, char *argv[])
 	if (f == NULL)
 	{	fprintf(stderr, "Error: can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);	}
-		while (fgets(line, sizeof(line), file) != NULL)
+		while (fgets(line, sizeof(line), f) != NULL)
 		{	op = strtok(line, " \t\n");
 			if (op == NULL)
 				continue;

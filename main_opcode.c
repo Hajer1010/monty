@@ -23,7 +23,7 @@ void push(stack_t **stack, int value)
 	{
 		(*stack)->prev = *stack;
 	}
-	*stack = new
+	*stack = new;
 }
 
 /**
@@ -34,9 +34,11 @@ void push(stack_t **stack, int value)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
+	stack_t *ptr;
+
 	(void)line_number;
 
-	stack_t *ptr = stack;
+	ptr = *stack;
 
 	while (ptr != NULL)
 	{
