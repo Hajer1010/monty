@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
 				continue;
 			if (strcmp(op, "push") == 0)
 			{	v_str = strtok(NULL, " \t\n");
+				value = atoi(v_str);
 				if (v_str == NULL)
-				{	fprintf(stderr, "Error: usage: push integer\n");
+				{	fprintf(stderr, "L%d: usage: push integer\n", value);
 					free_stack(stack);
 					exit(EXIT_FAILURE);	}
-				value = atoi(v_str);
 				push(&stack, value);	}
 			else if (strcmp(op, "pall") == 0)
 			{	pall(&stack, 0);	}
