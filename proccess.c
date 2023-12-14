@@ -23,7 +23,7 @@ void process(stack_t **stack, char *line, unsigned int line_number)
 		if (v_str == NULL)
                 {
                         fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			free_stack(stack);
+			free_stack(*stack);
                         exit(EXIT_FAILURE);
                 }
 		value = atoi(v_str);
