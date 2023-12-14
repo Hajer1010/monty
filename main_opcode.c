@@ -12,7 +12,7 @@ void push(stack_t **stack, int value)
 
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: memory allocation failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = value;

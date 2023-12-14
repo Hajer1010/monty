@@ -9,18 +9,17 @@
 
 int main(int argc, char *argv[])
 {
-	char line[100];
 	FILE *f;
-	char *op, *v_str;
+	char *op, *v_str, line[100];
 	int value;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
-	{	fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+	{	fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);	}
 	f = fopen(argv[1], "r");
 	if (f == NULL)
-	{	fprintf(stderr, "Error: can't open file %s\n", argv[1]);
+	{	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);	}
 		while (fgets(line, sizeof(line), f) != NULL)
 		{	op = strtok(line, " \t\n");
@@ -45,7 +44,7 @@ int main(int argc, char *argv[])
 			else if (strcmp(op, "add") == 0)
 			{	add(&stack, 0);	}
 			else
-			{	fprintf(stderr, "Error: Unknown opcode %s\n", op);
+			{	fprintf(stderr, "Error: unknown instruction %s\n", op);
 				free_stack(stack);
 				exit(EXIT_FAILURE);	}
 		}	fclose(f);
