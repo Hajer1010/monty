@@ -4,6 +4,7 @@
  * push - function to push
  * @stack: the head of list
  * @value: hold the value
+ * @line_number: hild the line value
 */
 
 void push(stack_t **stack, int value, unsigned int line_number)
@@ -30,7 +31,6 @@ void push(stack_t **stack, int value, unsigned int line_number)
 /**
  * pall - function to print all the nodes values
  * @stack: the head of the list
- * @line_number: hold the value
 */
 
 void pall(stack_t **stack)

@@ -39,3 +39,15 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	free(top);
 }
+
+/**
+ * nop - nothing
+ * @stack: the head
+ * @line_number: hold the value
+*/
+
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
